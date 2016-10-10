@@ -5,6 +5,7 @@ $$.check() -checks included cookies or not (browser support)  return true or fal
 
 
 $$.set(name,value,{}) -set Cookie
+
 description:
 
 name- name cookie(string);
