@@ -24,5 +24,7 @@ secure - true(https) or false(http)
 
 
 $$.get("test") - get value cookie  With name "test";
+
 $$.delete("test")-delete cookie with name ""test;
+
 $$.deleteAll()-delete All cookie;
