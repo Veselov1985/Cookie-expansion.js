@@ -14,6 +14,7 @@ value - value cookie (string or {} or []);
 {} - additional settings object:
 
 expires: - time the existence of Cookie (number(sec) or  Data in  UTC );
+
 path: -way for cookie(string);
 
 domain: - domian for cookie(string);
