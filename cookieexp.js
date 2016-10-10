@@ -28,9 +28,22 @@ var cook = {};
      var matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
      ));
+
+
+     var JSON_object = !(/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(
+matches[1].replace(/"(\\.|[^"\\])*"/g, ''))) && eval('(' + matches[1] + ')');
+
+  
+
+
+
+     if(JSON_object) {
+    
+        return JSON.parse(matches[1]);
+     } else {
     return matches ? decodeURIComponent(matches[1]) : undefined;
     }
-
+}
 
 
     cook.setCookie =function (name, value, options) {
@@ -47,7 +60,18 @@ var cook = {};
     options.expires = expires.toUTCString();
   }
 
-  value = encodeURIComponent(value);
+   if(Array.isArray(value) || value instanceof Object ) {
+
+
+    value = JSON.stringify(value);
+    console.log(value);
+
+    alert("fo");
+
+
+   } else {  value = encodeURIComponent(value);
+
+   }
 
   var updatedCookie = name + "=" + value;
 
