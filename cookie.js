@@ -2,8 +2,12 @@
 	
 
 window.onload = function () {
-	console.log(cook.check());
-$$.set("val","1");
+if($$.check()) {
+$$.set("test","1");
+$$.get("test");
+$$.delete("test");
+$$.deleteAll();
 
+}
 }
 
