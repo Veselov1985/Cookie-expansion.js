@@ -1,4 +1,4 @@
-var cook = window.cook = window.$$=(function() {
+var cook = this.cook = this.$$=(function() {
 
 
 var cook = {};
